@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess a word game</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1> Guess the Word </h1>
+    
+    
+    <div class="start-screen" id="start-screen">
+      <div class="start-content">
+        <h2>Welcome to Guess the Word!</h2>
+        <button class="start-btn" id="start-btn">Start Game</button>
+        
+        <div class="how-to-play">
+          <h3>How To Play:</h3>
+          <ul>
+            <li>You will be given a word to guess</li>
+            <li>Type one letter at a time to reveal the word</li>
+            <li>Each correct letter will be shown in its position</li>
+            <li>You have a limited number of guesses</li>
+            <li>Wrong letters will be displayed below</li>
+            <li>Find all letters before running out of guesses to win!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Difficulty Screen -->
+    <div class="difficulty-screen" id="difficulty-screen" style="display: none;">
+      <div class="difficulty-content">
+        <h2>Select Difficulty</h2>
+        <div class="difficulty-buttons">
+          <button class="difficulty-btn" id="easy-btn" data-difficulty="easy">Easy</button>
+          <button class="difficulty-btn" id="medium-btn" data-difficulty="medium">Medium</button>
+          <button class="difficulty-btn" id="hard-btn" data-difficulty="hard">Hard</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Game Screen -->
+    <div class="game-screen" id="game-screen" style="display: none;">
+      <div class="content">
+      <p class="question-counter"><span id="current-question">1</span>/20</p>
+      <input type="text" class="typing-input" maxlength="1" />
+      <div class="inputs"></div>
+      <div class="details">
+        <p class="hint">Hint: <span></span> </p>
+        <p class=" guess-left">Remaining guesses: <span> </span></p>
+        <p class="wrong-letter">Wrong letters: <span></span></p>
+      </div>
+      <button class="reset-btn">Reset Game</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Final Score Screen (top-level so modal centers correctly) -->
+  <div class="final-score-screen" id="final-score-screen" style="display: none;">
+    <div class="score-content">
+      <div class="final-score">
+        <p>Final Score</p>
+        <h1>
+          <span id="final-score">0</span>
+          <span class="out-of">/20</span>
+        </h1>
+      </div>
+      <button class="exit-btn" id="exit-btn">Exit Game</button>
+    </div>
+  </div>
+
+  <script src="word.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
